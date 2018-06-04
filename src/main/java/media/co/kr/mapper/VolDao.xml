@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="media.co.kr.dao.VolDao">
+   <insert id="insert_board">
+      INSERT INTO Vol (name, writer, contents ,date ,filename)
+      VALUES (#{name}, #{writer}, #{contents}, #{date},#{filename})
+   </insert>
+   <select id="viewboard" resultType="media.co.kr.dto.BoardDto">
+      SELECT *
+      from Vol 
+   </select>
+   <select id="boarddetail" resultType="media.co.kr.dto.BoardDto">
+      select * from Vol where idx = #{param1};
+   </select>
+   
+</mapper>

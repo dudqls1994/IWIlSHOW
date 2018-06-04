@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="media.co.kr.dao.LoginDao">
+	<insert id="insert_user">
+		INSERT INTO Mpuser (name, email, password,message,problem)
+		VALUES (#{name}, #{email}, #{password}, #{message}, #{problem})
+	</insert>
+	<select id="Login" resultType="media.co.kr.dto.UserDto">
+		SELECT *
+		from Mpuser user where email = #{email}
+	</select>
+	
+</mapper>
